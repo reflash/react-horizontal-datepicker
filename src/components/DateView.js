@@ -78,9 +78,9 @@ const DateView = ({startDate, lastDate, selectDate, getSelectedDay, primaryColor
                 <div className={styles.monthContainer}
                      key={month}
                 >
-                    <span className={styles.monthYearLabel} style={labelColor}>
+                    {!props.hideMonthLabel && <span className={styles.monthYearLabel} style={labelColor}>
                         {format(month, labelFormat || "MMMM yyyy")}
-                    </span>
+                    </span>}
                     <div className={styles.daysContainer} style={i===0?firstSection:null}>
                         {days}
                     </div>

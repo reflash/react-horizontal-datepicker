@@ -38,13 +38,13 @@ const DatePicker = (props) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.buttonWrapper} style={buttonzIndex}>
+            {!props.hideNavigation && <div className={styles.buttonWrapper} style={buttonzIndex}>
                 <button className={styles.button} style={buttonStyle} onClick={prev}>&lt;</button>
-            </div>
+            </div>}
             <Component {...props} primaryColor={primaryColor} startDate={startDate} lastDate={lastDate}/>
-            <div className={styles.buttonWrapper} style={buttonzIndex}>
+            {!props.hideNavigation && <div className={styles.buttonWrapper} style={buttonzIndex}>
                 <button className={styles.button} style={buttonStyle} onClick={next}>&gt;</button>
-            </div>
+            </div>}
         </div>
     )
 }
