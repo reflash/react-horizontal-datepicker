@@ -12,7 +12,7 @@ import {
 } from "date-fns";
 
 
-const DateView = ({startDate, lastDate, selectDate, getSelectedDay, primaryColor, labelFormat, marked}) => {
+const DateView = ({startDate, lastDate, selectDate, getSelectedDay, primaryColor, labelFormat, marked, hideMonthLabel}) => {
     const [selectedDate, setSelectedDate] = useState(null);
     const firstSection = {marginLeft: '40px'};
     const selectedStyle = {fontWeight:"bold",width:"45px",height:"45px",borderRadius:"50%",border:`2px solid ${primaryColor}`,color:primaryColor};
@@ -78,7 +78,7 @@ const DateView = ({startDate, lastDate, selectDate, getSelectedDay, primaryColor
                 <div className={styles.monthContainer}
                      key={month}
                 >
-                    {!props.hideMonthLabel && <span className={styles.monthYearLabel} style={labelColor}>
+                    {!hideMonthLabel && <span className={styles.monthYearLabel} style={labelColor}>
                         {format(month, labelFormat || "MMMM yyyy")}
                     </span>}
                     <div className={styles.daysContainer} style={i===0?firstSection:null}>

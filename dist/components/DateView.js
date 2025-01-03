@@ -10,7 +10,8 @@ const DateView = ({
   getSelectedDay,
   primaryColor,
   labelFormat,
-  marked
+  marked,
+  hideMonthLabel
 }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const firstSection = {
@@ -89,7 +90,7 @@ const DateView = ({
       months.push( /*#__PURE__*/React.createElement("div", {
         className: styles.monthContainer,
         key: month
-      }, !props.hideMonthLabel && /*#__PURE__*/React.createElement("span", {
+      }, !hideMonthLabel && /*#__PURE__*/React.createElement("span", {
         className: styles.monthYearLabel,
         style: labelColor
       }, format(month, labelFormat || "MMMM yyyy")), /*#__PURE__*/React.createElement("div", {
